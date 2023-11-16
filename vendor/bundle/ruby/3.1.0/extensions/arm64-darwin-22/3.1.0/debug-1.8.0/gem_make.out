@@ -1,0 +1,16 @@
+current directory: /Users/obana.takenori/Work/railstest/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+/Users/obana.takenori/.rbenv/versions/3.1.2/bin/ruby -I /Users/obana.takenori/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20231116-59808-tul0xz.rb extconf.rb
+creating Makefile
+
+current directory: /Users/obana.takenori/Work/railstest/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= clean
+
+current directory: /Users/obana.takenori/Work/railstest/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/obana.takenori/Work/railstest/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 debug.bundle ./.gem.20231116-59808-dbwtx1/debug

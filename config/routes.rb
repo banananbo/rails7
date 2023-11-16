@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "home" => "home#index"
 
+  get "api/products" => "api/products#index"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

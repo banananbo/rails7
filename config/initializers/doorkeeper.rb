@@ -13,8 +13,17 @@ Doorkeeper.configure do
   #   #   User.find_by(id: session[:user_id]) || redirect_to(new_user_session_url)
   # end
 
+  # resource_owner_authenticator do
+  #   current_user || warden.authenticate!(scope: :user)
+  # end
+
   resource_owner_authenticator do
-    current_user || warden.authenticate!(scope: :user)
+    if current_user
+      current_user
+    else
+      redirect_to(new_user_session_url)
+      nil
+    end
   end
 
   admin_authenticator do |_routes|
@@ -22,9 +31,11 @@ Doorkeeper.configure do
   end
 
   default_scopes :read
-  optional_scopes :write
+  optional_scopes :write, :openid
     
   enforce_configured_scopes
+
+  grant_flows %w(authorization_code implicit_oidc)
 
   # If you didn't skip applications controller from Doorkeeper routes in your application routes.rb
   # file then you need to declare this block in order to restrict access to the web interface for

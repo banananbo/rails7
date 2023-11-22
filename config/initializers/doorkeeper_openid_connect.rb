@@ -2,14 +2,10 @@
 
 Doorkeeper::OpenidConnect.configure do
   issuer do |resource_owner, application|
-    'issuer string'
+    'https://obana.com/'
   end
 
-  signing_key <<~KEY
-    -----BEGIN RSA PRIVATE KEY-----
-    ....
-    -----END RSA PRIVATE KEY-----
-  KEY
+  signing_key File.read(Rails.root.join('private_key.pem'))
 
   subject_types_supported [:public]
 

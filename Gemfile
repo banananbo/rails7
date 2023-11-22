@@ -65,3 +65,4 @@ end
 
 gem "doorkeeper", "~> 5.6"
 gem "devise", "~> 4.9"
+gem 'doorkeeper-openid_connect'
